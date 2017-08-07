@@ -12,3 +12,6 @@ This section shows the setup used for this project
 1. pandas (included in anaconda)
 2. matplotlib (included in anaconda)
 3. pandas-datareader
+4. datetime
+5. os
+6. numpy
