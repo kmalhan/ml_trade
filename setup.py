@@ -18,7 +18,8 @@ setup(
                       'pandas',
                       'pandas-datareader',
                       'datetime',
-                      'matplotlib'],
+                      'matplotlib',
+                      'pytest'],
     url='https://github.com/kmalhan/ml_trade',
     license=license,
     packages=find_packages(exclude=('tests','docs'))

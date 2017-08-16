@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 
 
-def symbol_to_path(symbol, base_dir="../data"):
+def symbol_to_path(symbol, base_dir="../data/"):
     """
     Return CSV path to specified symbol
     :type symbol: char
@@ -20,11 +20,12 @@ def symbol_to_path(symbol, base_dir="../data"):
     return os.path.join(base_dir, "{}.csv".format(str(symbol)))
 
 
-def get_data(symbols, dates):
+def get_data(symbols, dates, base_dir="../data/"):
     """
     Read stock data (close) for given symbols for given period of time
     :type symbols: char array
     :type dates: DatetimeIndex
+    :type base_dir: String
     :rtype: DataFrame
     """
     df = pd.DataFrame(index=dates)
@@ -32,10 +33,10 @@ def get_data(symbols, dates):
         symbols.insert(0, 'SPY')
 
     for symbol in symbols:
-        temp_df = pd.read_csv(symbol_to_path(symbol), index_col='Date',
+        temp_df = pd.read_csv(symbol_to_path(symbol, base_dir), index_col='Date',
                               parse_dates=True, usecols=['Date', 'Close'],
                               na_values=['nan'])
-        temp_df = temp_df.remane(columns={'Close': symbol})
+        temp_df = temp_df.rename(columns={'Close': symbol})
         df = df.join(temp_df, how='inner')
     return df
 
