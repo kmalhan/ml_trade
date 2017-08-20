@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from ml_trade import utility
 
-# TODO: Implement CI tool
-
 
 def test_symbol_to_path(tmpdir_factory):
     # Create new
