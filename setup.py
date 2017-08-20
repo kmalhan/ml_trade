@@ -19,7 +19,9 @@ setup(
                       'pandas-datareader',
                       'datetime',
                       'matplotlib',
-                      'pytest'],
+                      'pytest',
+                      'pytest-cov',
+                      'codecov'],
     url='https://github.com/kmalhan/ml_trade',
     license=license,
     packages=find_packages(exclude=('tests','docs'))
